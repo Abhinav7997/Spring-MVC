@@ -25,7 +25,7 @@ public class BmiController {
     public String result(@RequestParam("height") double heightInInches,
                          @RequestParam("weight") double weightInPounds,
                          Model model) {
-        double bmi = weightInPounds / (heightInInches * heightInInches) * 703;
+        double bmi = (weightInPounds / (heightInInches * heightInInches)) * 703;
         DecimalFormat df = new DecimalFormat("#.##");
         bmi = Double.parseDouble(df.format(bmi));
         model.addAttribute("bmi", bmi);
